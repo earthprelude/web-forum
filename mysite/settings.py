@@ -28,8 +28,8 @@ SECRET_KEY = 'b#s*_o(3t3ai_k(c5po@h7a=nj5#vjkd3u7ckhnx@)mi=8fn67'
 DEBUG = True
 
 #ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','public-web-forum.herokuapp.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','public-web-forum.herokuapp.com', '.herokuapp.com']
+#ALLOWED_HOSTS = []
 X_FRAME_OPTIONS = 'ALLOW ALL'
 
 # Application definition
