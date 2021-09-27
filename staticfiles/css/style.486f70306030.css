@@ -1,0 +1,153 @@
+*{
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(200, 222, 230, 0.603);
+  text-align: center;
+  font-family: Nunito, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+
+nav{
+  background-color: rgb(14, 14, 110);
+  padding: 5px 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 350px){
+  nav ul {
+    flex-wrap: wrap;
+  }
+}
+
+nav li, nav li a{
+  color: aliceblue;
+  padding-right: 20px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+nav ul{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+nav a:hover{
+  color: rgb(106, 106, 202);
+  font-weight: 800;
+  text-decoration: none;
+  background-color: rgb(14, 14, 110, 0.2); 
+}
+
+nav a, button a{
+  text-decoration: none; 
+}
+
+nav a{
+  font-size: 2rem;
+}
+
+#forum{
+  border: 3px solid black;
+  margin: 0 auto; 
+  margin-top: 10px;
+  max-width: 100%;
+  width: 80%;
+  background-color:rgb(199, 218, 235);
+}
+
+.post{
+  border-top: 2px solid black;
+  padding: 10px;
+  width: 100rem;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post a:hover{
+  font-weight: bold;
+}
+
+button, input[type=submit]{
+  background-color: aliceblue;
+  border: 2px solid darkblue;
+  padding: 5px;
+  border-radius: 0.25em;
+}
+
+button:hover{
+  background-color: rgba(192, 192, 229, 0.767);
+  border: 3px solid darkblue;
+}
+
+#post-question{
+  border: 2px solid rgba(0, 0, 139, 0.521);
+  box-shadow: .1px .1px .1px .1px;
+}
+
+#post-question a{
+  text-decoration: none;
+}
+
+table{
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+#signup{
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login td{
+  display: inline-block;
+  margin: 0.5em;
+}
+
+#modify-post{
+  display:inline-block;
+}
+
+#welcome-section p{
+  font-size: 1.5em;
+}
+
+footer{
+  background-color: rgb(13, 13, 77);
+  padding: 10px;
+  margin-top: auto;
+  color: white;
+}
+
+.comment, .post-detail{
+  background-color: rgba(181, 207, 216, 0.24); 
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  width: 60rem;
+}
+
+.comment p, .post-detail p{
+  text-align: left;
+}
+
+
+#comment{
+  max-width: 80%; 
+}
