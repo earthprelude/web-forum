@@ -25,9 +25,9 @@ SETTINGS_PATH = os.path.dirname(__file__)
 SECRET_KEY = 'b#s*_o(3t3ai_k(c5po@h7a=nj5#vjkd3u7ckhnx@)mi=8fn67'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','public-web-forum.herokuapp.com', '.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','public-web-forum.herokuapp.com']
 X_FRAME_OPTIONS = 'ALLOW ALL'
 
 # Application definition
@@ -40,18 +40,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Posts.apps.PostsAppConfig', 
-    #'whitenoise.runserver_nostatic',
+    'whitenoise.runserver_nostatic',
     'mysite' 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware'
     
 ]
@@ -142,3 +142,8 @@ DATABASES = { 'default' : dj_database_url.config()}
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# try to load local_settings.py if it exists
+try:
+  from .local_settings import *
+except Exception as e:
+  pass
