@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<section id="welcome-section">
+{% if user.is_authenticated %}
+<p> Hello, {{user.username}}! </p>
+<p>Welcome back to our web forum. </p>
+<p> Times visited: {{num_visits}} </p>
+{% endif %}
+</section>
+
+
+
+<h1> Open Forum </h1>
+
+<h3>
+ <button id="post-question" class="btn btn-large"> <a href="{% url 'create_post' %}"> Post a Question </a> </button>
+</h3><br>
+
+<div id ="forum">
+{% for post in object_list reversed %}
+<div class="post">
+  <h4><a href="{% url 'post' post.pk %}">{{ post.title }}</a></h4>
+  {% if post.user_id %}
+  <p>{{ post.user_id }},
+  {% else %}
+  <p> Anonymous, 
+  {% endif %}
+  <small> {{post.date}}</p></small>
+  <!-- <p> {{ post.text | truncatechars:100 }} </p> -->
+</div>
+{% endfor %}
+</div>
+
+<br>
+
+{% endblock content %}

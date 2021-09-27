@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Create a new post{% endblock title %}
+
+{% block content %}
+<h2>Post a Question to the Forum!</h2>
+
+<form action="" method="POST">{% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Save">
+</form>
+{% endblock content %}

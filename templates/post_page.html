@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }}{% endblock title %}
+
+{% block content %}
+<div class="post-detail">
+<h1>{{ post.title }}</h1>
+<p>Posted by: <strong>{{ post.user_id }}</strong></p>
+<p>{{ post.date }}</p>
+
+<p>{{ post.text }}</p>
+
+
+<div id="modify-post">
+{% if user.is_authenticated %}
+{% if request.user == post.user_id %}
+<br>
+<button><a href="{% url 'update_post' post.pk %}">Edit</a></button>
+<button><a href="{% url 'delete_post' post.pk %}">Delete</a></button>
+{% endif %}
+{% endif %}
+</div>
+
+</div>
+
+<br><br>
+<h4><a href="{% url 'create_comment' post.pk %}">Post comment</a></h4>
+
+
+<div id="comments">
+{% if comments %}
+<h4>
+{{ comments.count }}
+{% if comments.count == 1 %}<span>comment</span> 
+{% else %}<span>comments</span> 
+{% endif %}
+</h4>
+{% endif %}
+
+{% for comment in comments %}
+
+<div class="comment">
+<p> <strong>{{comment.user_id}}</strong>,  
+<span> {{comment.date}} </span>
+<br>
+{{comment.text | linebreaks}}
+</p>
+</div>
+
+{% endfor %}
+
+
+</div>
+
+
+
+
+{% endblock content %}
