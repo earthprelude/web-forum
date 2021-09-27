@@ -7,7 +7,7 @@ Visit the app at https://public-web-forum.herokuapp.com/
 # Built With
 
 - [Django](https://www.djangoproject.com/) &mdash; back end 
-- [PostgreSQL](https://www.postgresql.org/) &mdash; main data store 
+- [PostgreSQL](https://www.postgresql.org/) &mdash; main database 
 - [Heroku](https://www.heroku.com/) &mdash; deployed on Heroku
 - [Bootstrap](https://getbootstrap.com/) &mdash; some styling
 
