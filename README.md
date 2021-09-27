@@ -12,7 +12,7 @@ Visit the app at https://public-web-forum.herokuapp.com/
 
 # Credits 
 
-Base project (posts) loosely based on this [tutorial](https://replit.com/talk/learn/Learning-Web-Development-with-Python-Part-1/12880) by @ArchieMclean on replit.com. 
+Base project (class-based views for posts) loosely based on this [tutorial](https://replit.com/talk/learn/Learning-Web-Development-with-Python-Part-1/12880) by @ArchieMclean on replit.com. 
 I then added extra features, including user authentication, comments system, and deploy to Heroku. 
 
 
