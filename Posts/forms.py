@@ -18,6 +18,3 @@ class CommentForm(ModelForm):
   def __init__(self, *args, user_id=None, **kwargs):   
     super(CommentForm, self).__init__(*args, **kwargs)
     self.user_id = user_id
-
-class SignUpForm(): 
-  pass
