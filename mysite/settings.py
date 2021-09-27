@@ -25,7 +25,7 @@ SETTINGS_PATH = os.path.dirname(__file__)
 SECRET_KEY = 'b#s*_o(3t3ai_k(c5po@h7a=nj5#vjkd3u7ckhnx@)mi=8fn67'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','public-web-forum.herokuapp.com', '.herokuapp.com']
 X_FRAME_OPTIONS = 'ALLOW ALL'
