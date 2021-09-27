@@ -25,11 +25,9 @@ SETTINGS_PATH = os.path.dirname(__file__)
 SECRET_KEY = 'b#s*_o(3t3ai_k(c5po@h7a=nj5#vjkd3u7ckhnx@)mi=8fn67'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-#ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','public-web-forum.herokuapp.com', '.herokuapp.com']
-#ALLOWED_HOSTS = []
 X_FRAME_OPTIONS = 'ALLOW ALL'
 
 # Application definition
@@ -143,8 +141,3 @@ DATABASES = { 'default' : dj_database_url.config()}
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# try to load local_settings.py if it exists
-try:
-  from local_settings import *
-except Exception as e:
-  pass
